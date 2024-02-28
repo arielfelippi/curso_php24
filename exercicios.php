@@ -32,7 +32,7 @@ $c = 16;
 if ($tipoTemperatura == 'c')  {
     $f = $c * 1.8 + 32;
     $k = $c + 273;
-    echo "A temperatura em farenheit é: {$f} e, a temperatura em Kelvin é: {$k}." ;
+    // echo "A temperatura em farenheit é: {$f} e, a temperatura em Kelvin é: {$k}." ;
 } else if ($tipoTemperatura == 'f')  {
     $c = $f * 1.8 - 32;
     $k = $f + 273;
@@ -46,6 +46,23 @@ if ($tipoTemperatura == 'c')  {
 /*
     calcular o IMC
 */
+$peso = 90;
+$altura = 1.88;
+$imc = $peso / ($altura * $altura);
 
+$imc = round($imc, 2);
+
+if ($imc <= 18){
+    echo "O seu IMC é: {$imc} e é considerado magreza";
+}
+else if ($imc > 18 && $imc <= 25) {
+    // normal
+}
+else if ($imc > 25 && $imc <= 30) {
+    // sobrepeso
+}
+else if ($imc > 30 && $imc <= 40) {
+    // obesidade
+}
 
 
