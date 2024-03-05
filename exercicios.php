@@ -64,5 +64,3 @@ else if ($imc > 25 && $imc <= 30) {
 else if ($imc > 30 && $imc <= 40) {
     // obesidade
 }
-
-
