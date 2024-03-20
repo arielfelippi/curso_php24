@@ -116,10 +116,21 @@ for ($i = 0; $i < $tamanhoArray; $i++ ) {
 
 $cargo_empregado = "";
 $salario_com_aumento = [];
-$percentuais = [10, 12, 14, 16];
-$cargos = ["empregado", "supervisor", "gerente", "diretor", "CTO"];
+// $percentuais = [10, 12, 14, 16];
+// $cargos = ["empregado", "supervisor", "gerente", "diretor", "CTO"];
 
-$tamanhoArray = count($cargos);
+$cargosPercentual = [
+    "empregado" => 10,
+    "supervisor" => 12,
+    "gerente" => 14,
+    "diretor" => 16,
+    "CTO"=> 16,
+];
+
 
 $salario = 1412.00;
 
+
+foreach ($cargosPercentual as $cargo => $percentual) {
+    
+}
