@@ -7,34 +7,30 @@
  * ContaBancaria (coisas incomum) e Bradesco, BB, Caixa...
  */
 
-class Banco {
-
-}
-
-class ContaBancaria {
-    public $saldo;
+ class ContaBancaria {
+    public $saldo = 0;
 
     public function saque($valor = 0) {
         // implementar a logica para o saque
         $this->saldo = $this->saldo - $valor;
     }    
+
+    public function exibirSaldo() {
+        echo "O saldo atual é R$: {$this->saldo}\n";
+    }
 }
 
 class BB extends ContaBancaria {
-    public $conta;
-    public $agencia;
-    public $titular;
+    public $agencia = '1234-5';
+    public $conta = '1234567-89';
+    public $titular = 'Ariel';
 
     public function getInfoConta() {
-        echo "Titular: {$this->titular}
-            Agencia: {$this->agencia}
-            CC: {$this->conta}
-            \n
-            saldo: {$this->saldo}";
+        echo " Titular: {$this->titular} \n Agencia: {$this->agencia} \n CC: {$this->conta}\n";
     }
 }
 
 $banco = new BB();
-$banco->
+$banco->getInfoConta();
+$banco->exibirSaldo();
 $banco->saque(20);
-
