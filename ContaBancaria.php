@@ -13,9 +13,29 @@
     public $titular = '????';
     public $saldo = 0;
 
+    public $agenciaDestinatario = '00000';
+    public $contaDestinatario = '000000-00';
+    public $titularDestinatario = '????';
+
     public function saque($valor = 0) {
         // implementar a logica para o saque
         $this->saldo = $this->saldo - $valor;
+    }    
+    
+    public function transferencia($valor = 0) {
+        // implementar a logica para o saque
+        $this->saldo = $this->saldo - $valor;
+        
+        $conta = $this->getInfoConta();
+        $contaDestinatario = $this->getInfoContaDestinatario();
+        
+        $msgTransferencia = "*** TRANSFERÊNCIA *** \n";
+        $msgTransferencia .= $conta;
+        $msgTransferencia .= $contaDestinatario;
+        $msgTransferencia .= "Valor a ser transferido R$: {$valor} \n";
+        $msgTransferencia .= "O saldo atual ficou R$: {$this->saldo}";
+        
+        echo $msgTransferencia;
     }    
 
     public function exibirSaldo() {
@@ -24,6 +44,10 @@
     
     public function getInfoConta() {
         echo " Titular: {$this->titular} \n Agencia: {$this->agencia} \n CC: {$this->conta}\n";
+    }
+    
+    public function getInfoContaDestinatario() {
+        echo " Destinatario: {$this->titularDestinatario} \n Agencia: {$this->agenciaDestinatario} \n CC: {$this->contaDestinatario}\n";
     }
 }
 
@@ -34,10 +58,18 @@ class Bradesco extends ContaBancaria {
         $this->agencia = $agencia;
         $this->conta = $conta;
     }
+
+    public function setContaDestinatario($titular, $agencia, $conta) {
+        $this->titularDestinatario = $titular;
+        $this->agenciaDestinatario = $agencia;
+        $this->contaDestinatario = $conta;
+    }
 }
 
 $banco = new Bradesco();
-$banco->setConta('Ariel Felippi', '1234-5', '1234567-89');
-$banco->getInfoConta();
-$banco->exibirSaldo();
-$banco->saque(20);
+$banco->setConta('Marcos Carraro', '6789-1', '9876543-21');
+$banco->setContaDestinatario('Ariel Felippi', '1234-5', '1234567-89');
+//$banco->getInfoConta();
+//$banco->getInfoContaDestinatario();
+//$banco->exibirSaldo();
+$banco->transferencia(200);
