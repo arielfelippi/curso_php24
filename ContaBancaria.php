@@ -43,11 +43,11 @@
     }
     
     public function getInfoConta() {
-        echo " Titular: {$this->titular} \n Agencia: {$this->agencia} \n CC: {$this->conta}\n";
+        return " Titular: {$this->titular} \n Agencia: {$this->agencia} \n CC: {$this->conta}\n";
     }
     
     public function getInfoContaDestinatario() {
-        echo " Destinatario: {$this->titularDestinatario} \n Agencia: {$this->agenciaDestinatario} \n CC: {$this->contaDestinatario}\n";
+        return " Destinatario: {$this->titularDestinatario} \n Agencia: {$this->agenciaDestinatario} \n CC: {$this->contaDestinatario}\n";
     }
 }
 
@@ -69,7 +69,7 @@ class Bradesco extends ContaBancaria {
 $banco = new Bradesco();
 $banco->setConta('Marcos Carraro', '6789-1', '9876543-21');
 $banco->setContaDestinatario('Ariel Felippi', '1234-5', '1234567-89');
-//$banco->getInfoConta();
-//$banco->getInfoContaDestinatario();
+// echo $banco->getInfoConta();
+//echo $banco->getInfoContaDestinatario();
 //$banco->exibirSaldo();
 $banco->transferencia(200);
