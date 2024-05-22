@@ -30,8 +30,8 @@
         $contaDestinatario = $this->getInfoContaDestinatario();
         
         $msgTransferencia = "*** TRANSFERÊNCIA *** \n";
-        $msgTransferencia .= $conta;
-        $msgTransferencia .= $contaDestinatario;
+        $msgTransferencia .= "$conta\n";
+        $msgTransferencia .= "$contaDestinatario\n";
         $msgTransferencia .= "Valor a ser transferido R$: {$valor} \n";
         $msgTransferencia .= "O saldo atual ficou R$: {$this->saldo}";
         
